@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+  font-size: 14px;
+  display: flex;
+  background-color: #0e6cc4;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#action {
+  position: absolute;
+  margin: 10px;
+  font-size: 15px;
+  right: 0;
+  bottom: 0;
+}
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  left: 20px;
+  bottom: 15px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #000000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #000000;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#chatbox {
+  margin: auto 330px auto auto;
+  transform: translateY(40px);
+  width: 400px;
+  min-width: 300px;
+  height: 90vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.header {
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  height: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #044364;
+}
+
+.chat {
+  width: 100%;
+  height: 80%;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  padding: 15px 10px 10px 10px;
+  overflow-y: auto;
+  background-image: url("images-gifs/5b47d7c96e21100739608935987f5486.jpg");
+  /* background-color: black; */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.chat::-webkit-scrollbar {
+  display: none;
+}
+
+#userInput {
+  width: 100%;
+  padding: 10px;
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  border-radius: 0px 0px 10px 10px;
+}
+
+#textInput {
+  width: 80%;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid rgb(192, 190, 190);
+  font-family: "Ubuntu", sans-serif;
+}
+
+.fa_container {
+  width: 45px;
+  height: 40px;
+  float: right;
+  font-size: 28px;
+  /* background-color: #d3d7d8; */
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.send {
+  background-color: white;
+}
+
+#send .fa {
+  transform: translateY(20%) translateX(14%);
+  color: #0e6cc4;
+}
+#send.fa:hover {
+  color: #00688b;
+}
+#mic {
+  background-color: #d3d7d8;
+}
+
+#mic .fa {
+  transform: translateY(20%) translateX(60%);
+}
+
+.userText {
+  box-sizing: border-box;
+  float: right;
+  max-width: 70%;
+  position: relative;
+  clear: both;
+  font-family: helvetica;
+  font-size: 16px;
+  background-image: linear-gradient(#89f7fe, #66a6ff);
+  border-radius: 20px;
+  margin-bottom: 5px;
+  padding: 6px 10px;
+  word-wrap: break-word;
+  /* letter-spacing: 1px; */
+  padding: 10px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.userText:before,
+.userText:after {
+  border-radius: 20px / 5px;
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.userText:before {
+  border: 10px solid transparent;
+  bottom: 0px;
+  left: auto;
+  right: -7px;
+  z-index: -2;
+}
+
+.userText:after {
+  border: 8px solid transparent;
+  border-bottom-color: #66a6ff;
+  bottom: 1px;
+  left: auto;
+  right: -5px;
+}
+
+.botText {
+  display: table;
+  clear: both;
+  max-width: 75%;
+  position: relative;
+  font-size: 16px;
+  background-image: linear-gradient(rgb(255, 255, 255), #f2f3f5);
+  border-radius: 20px;
+  margin-bottom: 5px;
+  padding: 6px 10px;
+  /* letter-spacing: 1px; */
+}
+
+.botText:before,
+.botText:after {
+  border-radius: 20px / 5px;
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.botText:before {
+  border: 10px solid transparent;
+  bottom: 0px;
+  left: -7px;
+  z-index: -2;
+}
+
+.botText:after {
+  border: 8px solid transparent;
+  border-bottom-color: #f2f3f5; /* arrow color */
+  bottom: 1px;
+  left: -5px;
+}
