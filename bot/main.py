@@ -31,7 +31,7 @@ trainer.train("data/data.yml")
 
 @app.route("/")
 def index():
-    return render_template("final.html")  # to send context to html
+    return render_template("index.html")  # to send context to html
 
 
 @app.route("/get")
